@@ -1,12 +1,13 @@
 
 resource "aws_vpc" "default" {
-    cidr_block = "10.20.0.0/16"
+    cidr_block = "10.30.0.0/16"
     enable_dns_hostnames = true
     tags = {
         Name = "devops-vpc"
 	Owner = "chenchireddy"
 	environment = "devops"
-    deployedby = "terraform"
+        deployedby = "terraform"
+        costcenter =8080
     }
 }
 
