@@ -6,13 +6,16 @@ resource "aws_vpc" "default" {
         Name = "devops-vpc"
 	Owner = "chenchireddy"
 	environment = "devops"
-    deployeby = "devops"
+    deployedby = "terraform"
     }
 }
 
 resource "aws_internet_gateway" "default" {
     vpc_id = "${aws_vpc.default.id}"
 	tags = {
-        Name = "devlopment"
+        Name = "devops-igw"
+        Owner = "chenchireddy"
+	    environment = "devops"
+        deployedby = "terraform" 
     }
 }
